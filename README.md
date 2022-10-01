@@ -5,7 +5,7 @@ github开源仓库https://github.com/guofei9987/blind_watermark
 
 # 本仓库所用方法与原仓库有什么不同？
 
-为方便读者在快速找到本文的创新点对应的代码，这里作出详细说明。
+为方便读者在快速找到本文对原方法做出的改变对应的代码，这里作出详细说明。
 
 原开源仓库在blind_watermark/blind_watermark.py中read_img函数中使用的是dwt，本文使用的是generalize_dwt，
 
@@ -17,7 +17,7 @@ embed函数中使用的idwt改为本文中使用的generalize_idwt。
 
 如果要使用后面一种方法只需注释掉前面的函数，并取消后面函数的注释。
 
-本文的所有创新点体现在blindwatermark/blindwatermark.py中的第208行-第277行实现的四个函数。 
+本文的对原方法做出的所有改变体现在blindwatermark/blindwatermark.py中的第208行-第277行实现的四个函数。 
 
 examples/output 文件夹中的图片是正交分解九卷积的实验结果，examples/output_method2文件夹中的图片是频域分解九卷积的实验结果。
 
