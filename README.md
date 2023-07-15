@@ -1,35 +1,33 @@
-# 关于代码
+# Thanks
 
-github开源仓库https://github.com/guofei9987/blind_watermark
-提供了一个扩展性高的盲水印开源仓库，使得我可以专注于实现我们的可逆九卷积变换方法，而不费心去实现一些无关的细节和实现一些繁琐的代码。
+The open-source repository on GitHub, https://github.com/guofei9987/blind_watermark, provides a highly extensible blind watermarking open-source repository, allowing me to focus on implementing our reversible nine-convolution transformation method without worrying about implementing irrelevant details.
 
-# 本仓库所用方法与原仓库有什么不同？
+#  What is the difference between the method used in this repository and the original repository?
 
-为方便读者在快速找到本文对原方法做出的改变对应的代码，这里作出详细说明。
+To help readers quickly find the code corresponding to the changes made to the original method in this article, here is a detailed explanation.
 
-原开源仓库在blind_watermark/blind_watermark.py中read_img函数中使用的是dwt，本文使用的是generalize_dwt，
+The original open-source repository uses dwt in the read_img function in blind_watermark/blind_watermark.py, while this article uses generalize_dwt.
 
-embed函数中使用的idwt改为本文中使用的generalize_idwt。
+The idwt used in the embed function is changed to generalize_idwt used in this article.
 
-这两个变换对应的卷积核生成利用generate_kernels函数予以实现，
+The convolution kernels corresponding to these two transformations are implemented using the generate_kernels function.
 
-写在前面的是频域可逆九卷积，写在后面被注释掉的是正交可逆九卷积，
+The one written at the front is the frequency domain reversible nine-convolution, and the one commented out at the back is the orthogonal reversible nine-convolution.
 
-如果要使用后面一种方法只需注释掉前面的函数，并取消后面函数的注释。
+If you want to use the latter method, just comment out the previous function and uncomment the following function.
 
-本文的对原方法做出的所有改变体现在blindwatermark/blindwatermark.py中的第208行-第277行实现的四个函数。 
+All changes made by this article to the original method are reflected in the four functions implemented on lines 208-277 of blindwatermark/blindwatermark.py.
 
-examples/output 文件夹中的图片是正交分解九卷积的实验结果，examples/output_method2文件夹中的图片是频域分解九卷积的实验结果。
+The pictures in the examples/output folder are experimental results of orthogonal decomposition nine-convolution, and the pictures in the examples/output_method2 folder are experimental results of frequency domain decomposition nine-convolution.
 
-# 关于如何复现报告中的结果
+# How to reproduce the results in the report? 
 
-1.配置requirements中需要的环境
+1.Set up the environment required in the requirements.
 
-2.进入examples文件夹
+2.Enter the examples folder.
 
-3.python origin.py
+3.Run python origin.py.
 
-4.如果需要进行相关攻击，并查看实验结果，运行相关攻击文件，如进行椒盐攻击：
-   python pepper.py
+4.If you need to perform related attacks and view experimental results, run the relevant attack files, such as performing a pepper attack: python pepper.py.
 
-5.原始图片和水印在examples/pic文件夹中
+5.The original image and watermark are in the examples/pic folder.
